@@ -7,6 +7,7 @@
     "cmd:cmd": "node ./dist/cmd/main.js",
     "cmd:codemod:rrd": "node ./dist/codemod/rrd/main.js",
     "cmd:create-ikala-tsx": "node ./dist/create-ikala-tsx/main.js",
+    "cmd:generate-ts-type": "node ./dist/generate-ts-type/main.js",
     "build": "node ./scripts/build/main.mjs",
     "build:watch": "node ./scripts/build/main.mjs -watch",
     "log": "node ./scripts/log/main.mjs"
