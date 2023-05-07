@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "esnext",
+    "strict": true,
+    "useDefineForClassFields": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "allowJs": true,
+    "checkJs": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": ["**/*.ts", "index.js"],
+  "exclude": ["node_modules/"]
+}

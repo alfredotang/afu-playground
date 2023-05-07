@@ -1,0 +1,8 @@
+
+type Props = {}
+
+const <%= name %> = ({}: Props) => {
+  return <div><%= name %></div>
+}
+
+export default <%= name %>
