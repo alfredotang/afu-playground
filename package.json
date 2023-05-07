@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cmd:cmd": "node ./app/cmd/main.js",
-    "cmd:codemod:create-ikala-tsx": "node ./app/codemod/create-ikala-tsx/main.js",
-    "cmd:codemod:rrd": "node ./app/codemod/rrd/main.js",
+    "cmd:cmd": "node ./dist/cmd/main.js",
+    "cmd:codemod:create-ikala-tsx": "node ./dist/codemod/create-ikala-tsx/main.js",
+    "cmd:codemod:rrd": "node ./dist/codemod/rrd/main.js",
     "build": "node ./scripts/build/main.mjs",
     "build:watch": "node ./scripts/build/main.mjs -watch",
     "log": "node ./scripts/log/main.mjs"

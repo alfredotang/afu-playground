@@ -15,7 +15,7 @@ export default {
   format: 'cjs',
   bundle: true,
   platform: 'node',
-  outdir: 'app',
+  outdir: 'dist',
   target: 'node16',
   plugins: [watchPlugin, writeTheScripts, copyTxtIntoOutdir],
   minify: true,
