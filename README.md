@@ -31,7 +31,7 @@ pnpm build:watch
 
 
 ## cmd
-顯示所以可以執行的 script
+顯示所有可以執行的 script，可以用這個來選擇要執行的 `cmd`
 ```bash
 pnpm cmd:cmd
 ```
@@ -45,6 +45,3 @@ pnpm cmd:release:*
 ```bash
 pnpm cmd:rc:*
 ```
-
-
-
