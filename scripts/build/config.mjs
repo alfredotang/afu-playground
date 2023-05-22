@@ -7,8 +7,6 @@ import { getEntryPoints } from '../utils/main.mjs'
 
 const pkg = JSON.parse(readFileSync(PATH.PKG))
 
-const external = [...Object.keys(pkg.dependencies), ...Object.keys(pkg.devDependencies)]
-
 /** @type import('esbuild').BuildOptions*/
 export default {
   entryPoints: getEntryPoints(),
@@ -19,5 +17,5 @@ export default {
   target: 'node16',
   plugins: [watchPlugin, writeTheScripts, copyFileIntoOutdir],
   minify: true,
-  external, // add any external dependencies here
+  external: Object.keys(pkg.devDependencies), // add any external dependencies here
 }

@@ -4,23 +4,24 @@ import path from 'node:path'
 import prompt from '@src/libs/prompt'
 import logger from '@src/libs/logger'
 import { ROOT } from '@src/constants/path'
+import cancelTheProcess from '@src/utils/cancelTheProcess'
 
 const fetchCommandDict = (): Promise<string[]> =>
   new Promise(resolve => {
     const { scripts } = JSON.parse(readFileSync(path.join(ROOT, 'package.json'), 'utf-8'))
     const result = Object.keys(scripts).filter(script => script.startsWith('cmd'))
-    resolve([...result, 'quit'])
+    resolve(result)
   })
 
 const main = async () => {
   const commands = await fetchCommandDict()
-  const command = await prompt('選擇要執行的 cmd', {
+  const command = (await prompt('選擇要執行的 cmd', {
     type: 'select',
     name: 'command',
     options: commands,
-  })
+  })) as unknown as string
 
-  if (command.toString() === 'quit') process.exit(0)
+  if (cancelTheProcess(command)) process.exit(0)
 
   logger.start('start to child process')
 
