@@ -4,15 +4,13 @@
 
 ```bash
 npm -g install pnpm
-```
-
-```bash
 pnpm install
-
 ```
 
+## build command
 ```bash
 cp -R .env.example .env
+pnpm build
 ```
 
 ## Get Gitlab access tokens
