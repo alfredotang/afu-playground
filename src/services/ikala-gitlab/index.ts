@@ -6,7 +6,6 @@ import pickBy from 'lodash/fp/pickBy'
 import pipe from 'lodash/fp/pipe'
 import logger from '@src/libs/logger'
 import prompt from '@src/libs/prompt'
-import cancelTheProcess from '@src/utils/cancelTheProcess'
 
 export * from './type'
 
@@ -71,7 +70,7 @@ export class CreateIkalaGitlabAPI {
     const sure = await prompt('是否要發送 MR?', {
       type: 'confirm',
     })
-    if (!sure || cancelTheProcess(sure, true)) {
+    if (!sure) {
       logger.info('cancel')
       return
     }
