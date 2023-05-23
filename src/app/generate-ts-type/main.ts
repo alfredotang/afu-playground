@@ -9,18 +9,13 @@ type GenericObject = {
 }
 
 function generateTypeScriptType(obj: GenericObject): string {
-  let result = 'type GeneratedType = {\n'
+  const result = Object.entries(obj).reduce((acc, [key, value]) => {
+    const typeKey = key.includes('-') ? `'${key}'` : key
+    acc += `  ${typeKey}: ${getType(value)}\n`
+    return acc
+  }, 'type GeneratedType = {\n')
 
-  for (const key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      const valueType = getType(obj[key])
-      result += `  ${key}: ${valueType};\n`
-    }
-  }
-
-  result += '};'
-
-  return result
+  return `${result}}`
 }
 
 const main = async () => {

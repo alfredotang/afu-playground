@@ -16,6 +16,10 @@ const getType = (value: any): string => {
     return 'string'
   }
 
+  if (typeTag === TypeTagEnum.Null) {
+    return 'null'
+  }
+
   if (typeTag === TypeTagEnum.Object) {
     const objectProperties = Object.entries(value)
       .map(([key, value]) => `${key}: ${getType(value)}`)
