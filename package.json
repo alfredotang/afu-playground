@@ -8,6 +8,7 @@
     "cmd:codemod:rrd": "node ./dist/codemod/rrd/main.js",
     "cmd:create-ikala-tsx": "node ./dist/create-ikala-tsx/main.js",
     "cmd:generate-ts-type": "node ./dist/generate-ts-type/main.js",
+    "cmd:id": "node ./dist/id/main.js",
     "cmd:rc:cdp-management": "node ./dist/rc/cdp-management/main.js",
     "cmd:rc:portal": "node ./dist/rc/portal/main.js",
     "cmd:release:cdp-management": "node ./dist/release/cdp-management/main.js",
@@ -28,11 +29,14 @@
     "dayjs": "^1.11.7",
     "dotenv": "^16.0.3",
     "lodash": "^4.17.21",
-    "snakecase-keys": "^5.4.5"
+    "nanoid": "^4.0.2",
+    "snakecase-keys": "^5.4.5",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.194",
     "@types/node": "^18.15.11",
+    "@types/uuid": "^9.0.1",
     "esbuild": "^0.17.18",
     "prettier": "^2.8.7",
     "typescript": "^5.0.4"

@@ -1,4 +1,4 @@
-dist
+dist/main.js
 node_modules
 *.txt
 ed.js
