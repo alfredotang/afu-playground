@@ -43,3 +43,23 @@ pnpm cmd:release:*
 ```bash
 pnpm cmd:rc:*
 ```
+
+## log
+log ts 到 terminal 上
+
+建立 log 檔案
+```bash
+mkdir .log
+touch .log/main.ts
+```
+範例
+```ts
+// example
+// .log/main.ts
+console.log('hello')
+```
+
+執行
+```bash
+pnpm log
+```

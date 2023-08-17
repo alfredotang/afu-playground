@@ -8,11 +8,11 @@ const external = [...Object.keys(pkg.dependencies), ...Object.keys(pkg.devDepend
 
 /** @type import('esbuild').BuildOptions*/
 export default {
-  entryPoints: ['log/main.ts'],
+  entryPoints: ['.log/main.ts'],
   format: 'cjs',
   bundle: true,
   platform: 'node',
-  outdir: 'log',
+  outdir: '.log',
   target: 'node16',
   plugins: [restartLogServer],
   minify: true,

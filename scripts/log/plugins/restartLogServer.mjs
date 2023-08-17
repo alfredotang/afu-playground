@@ -23,7 +23,7 @@ export default {
         return
       }
 
-      child = spawn('node', ['./log/main.js'], { stdio: 'inherit' })
+      child = spawn('node', ['./.log/main.js'], { stdio: 'inherit' })
     })
 
     build.onDispose(() => {
