@@ -12,6 +12,7 @@
     "cmd:rc:cdp-management": "node ./dist/rc/cdp-management/main.js",
     "cmd:rc:portal": "node ./dist/rc/portal/main.js",
     "cmd:release:cdp-management": "node ./dist/release/cdp-management/main.js",
+    "cmd:release:desc": "node ./dist/release/desc/main.js",
     "cmd:release:portal": "node ./dist/release/portal/main.js",
     "build": "node ./scripts/build/main.mjs",
     "build:watch": "node ./scripts/build/main.mjs -watch",
