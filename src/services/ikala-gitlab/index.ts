@@ -5,7 +5,7 @@ import pickBy from 'lodash/fp/pickBy'
 import pipe from 'lodash/fp/pipe'
 import logger from '@src/libs/logger'
 import prompt from '@src/libs/prompt'
-import { IKALA_TEAM_GROUP } from '@src/constants/gitlab'
+import { IKALA_TEAM_GROUP, GITLAB_API_URL } from '@src/constants/gitlab'
 
 export * from './type'
 
@@ -16,7 +16,7 @@ export class CreateIkalaGitlabAPI {
   constructor(projectId: number) {
     this._projectId = projectId
     this._instance = axios.create({
-      baseURL: `${process.env.GITLAB_API_URL}/projects/${this._projectId}`,
+      baseURL: `${GITLAB_API_URL}/projects/${this._projectId}`,
       headers: {
         'PRIVATE-TOKEN': process.env.GITLAB_API_TOKEN,
       },
