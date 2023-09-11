@@ -58,12 +58,11 @@ bun log
 ```
 
 ## develop
-只要在 `src/app` 底下，新增 `main.ts`
-再執行
+若要開發新的 cmd ，一律放在 `src/app` 底下。新增/異動後，執行
 ```bash
 bun write:cmd
 ```
-就會自動根據 `src/app` 的結構，產生對應到 scripts 到 `package.json`
+會自動根據 `src/app` 的結構，產生對應的 scripts 到 `package.json`
 
 ```bash
 src/app
