@@ -1,4 +1,3 @@
-import * as dotenv from 'dotenv'
 import axios, { AxiosInstance } from 'axios'
 import type { Milestone, MergeRequest, Branch } from './type'
 import snakecaseKeys from 'snakecase-keys'
@@ -9,7 +8,6 @@ import prompt from '@src/libs/prompt'
 
 export * from './type'
 
-dotenv.config()
 
 export class CreateIkalaGitlabAPI {
   private _projectId: number

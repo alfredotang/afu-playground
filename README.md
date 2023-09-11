@@ -3,14 +3,14 @@
 ## install dependencies
 
 ```bash
-npm -g install pnpm
-pnpm install
+curl -fsSL https://bun.sh/install | bash
+bun install
 ```
 
 ## build command
 ```bash
 cp -R .env.example .env
-pnpm build
+bun build
 ```
 
 ## Get Gitlab access tokens

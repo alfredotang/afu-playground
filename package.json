@@ -1,22 +1,20 @@
 {
   "name": "afu-playground",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cmd:cmd": "node ./dist/cmd/main.js",
-    "cmd:codemod:rrd": "node ./dist/codemod/rrd/main.js",
-    "cmd:create-ikala-tsx": "node ./dist/create-ikala-tsx/main.js",
-    "cmd:generate-ts-type": "node ./dist/generate-ts-type/main.js",
-    "cmd:id": "node ./dist/id/main.js",
-    "cmd:rc:cdp-management": "node ./dist/rc/cdp-management/main.js",
-    "cmd:rc:portal": "node ./dist/rc/portal/main.js",
-    "cmd:release:cdp-management": "node ./dist/release/cdp-management/main.js",
-    "cmd:release:desc": "node ./dist/release/desc/main.js",
-    "cmd:release:portal": "node ./dist/release/portal/main.js",
-    "build": "node ./scripts/build/main.mjs",
-    "build:watch": "node ./scripts/build/main.mjs -watch",
-    "log": "node ./scripts/log/main.mjs"
+    "cmd": "bun src/app/cmd/main.ts",
+    "cmd:generate-ts-type": "bun src/app/generate-ts-type/main.ts",
+    "cmd:release:portal": "bun src/app/release/portal/main.ts",
+    "cmd:release:cdp-management": "bun src/app/release/cdp-management/main.ts",
+    "cmd:release:desc": "bun src/app/release/desc/main.ts",
+    "cmd:create-ikala-tsx": "bun src/app/create-ikala-tsx/main.ts",
+    "cmd:id": "bun src/app/id/main.ts",
+    "cmd:rc:portal": "bun src/app/rc/portal/main.ts",
+    "cmd:rc:cdp-management": "bun src/app/rc/cdp-management/main.ts",
+    "write:cmd": "bun src/scripts/writeCmdIntoPackageScript/main.ts",
+    "log": "bun --watch .log/main.ts"
   },
   "keywords": [],
   "author": "",
@@ -28,7 +26,6 @@
     "chalk": "^5.2.0",
     "consola": "^3.1.0",
     "dayjs": "^1.11.7",
-    "dotenv": "^16.0.3",
     "lodash": "^4.17.21",
     "nanoid": "^4.0.2",
     "snakecase-keys": "^5.4.5",
@@ -39,8 +36,8 @@
     "@types/lodash": "^4.14.194",
     "@types/node": "^18.15.11",
     "@types/uuid": "^9.0.1",
-    "esbuild": "^0.17.18",
-    "prettier": "^2.8.7",
-    "typescript": "^5.0.4"
+    "bun-types": "latest",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
   }
 }
