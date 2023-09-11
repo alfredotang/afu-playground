@@ -29,12 +29,12 @@ cp -R .env.example .env
 ## cmd
 顯示所有可以執行的 script，可以用這個來選擇要執行的 `cmd`
 ```bash
-pnpm cmd
+bun cmd
 ```
 
 建立 release MR (rc or production)
 ```bash
-pnpm cmd:release:mr
+bun cmd:release:mr
 ```
 
 ## log
