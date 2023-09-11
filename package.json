@@ -6,11 +6,11 @@
   "scripts": {
     "cmd": "bun src/app/cmd/main.ts",
     "cmd:generate-ts-type": "bun src/app/generate-ts-type/main.ts",
-    "cmd:release:portal": "bun src/app/release/portal/main.ts",
-    "cmd:release:cdp-management": "bun src/app/release/cdp-management/main.ts",
+    "cmd:release:mr": "bun src/app/release/mr/main.ts",
     "cmd:release:desc": "bun src/app/release/desc/main.ts",
     "cmd:create-ikala-tsx": "bun src/app/create-ikala-tsx/main.ts",
     "cmd:id": "bun src/app/id/main.ts",
+    "cmd:rc": "bun src/app/rc/main.ts",
     "cmd:rc:portal": "bun src/app/rc/portal/main.ts",
     "cmd:rc:cdp-management": "bun src/app/rc/cdp-management/main.ts",
     "write:cmd": "bun src/scripts/writeCmdIntoPackageScript/main.ts",

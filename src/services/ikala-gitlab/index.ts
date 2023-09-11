@@ -5,9 +5,9 @@ import pickBy from 'lodash/fp/pickBy'
 import pipe from 'lodash/fp/pipe'
 import logger from '@src/libs/logger'
 import prompt from '@src/libs/prompt'
+import { IKALA_TEAM_GROUP } from '@src/constants/gitlab'
 
 export * from './type'
-
 
 export class CreateIkalaGitlabAPI {
   private _projectId: number
@@ -33,10 +33,16 @@ export class CreateIkalaGitlabAPI {
     )
   }
 
-  public async getMergeRequestDescriptionByMilestones(milestoneTitle: string) {
+  public async getMergeRequestDescriptionByMilestones(milestoneTitle: string, isReleaseToProd?: boolean) {
     const { data } = await this.getMergeRequestByMilestones(milestoneTitle)
     const desc = data.map(({ reference, title }) => `- ${reference} ${title}`).join('\n')
-    return `${desc}\n\n@austin.chang @jinze.huang @alfredo.tang`
+    return [
+      `## Change logs\n\n${desc}`,
+      `## Reviewer\n\n${IKALA_TEAM_GROUP.FE.join('\t')}`,
+      isReleaseToProd ? `## SRE Reviewer\n\n${IKALA_TEAM_GROUP.SRE.join('\t')}` : '',
+    ]
+      .filter(Boolean)
+      .join('\n\n')
   }
 
   public postMergeRequest(params: {
@@ -56,14 +62,16 @@ export class CreateIkalaGitlabAPI {
     milestoneId,
     sourceBranch,
     targetBranch,
+    isReleaseToProd,
   }: {
     milestoneTitle: string
     title: string
     milestoneId: number
     sourceBranch: Branch
     targetBranch: Branch
+    isReleaseToProd?: boolean
   }) {
-    const description = await this.getMergeRequestDescriptionByMilestones(milestoneTitle)
+    const description = await this.getMergeRequestDescriptionByMilestones(milestoneTitle, isReleaseToProd)
     logger.log(description)
     const sure = await prompt('是否要發送 MR?', {
       type: 'confirm',
