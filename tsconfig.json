@@ -5,6 +5,7 @@
     "strict": true,
     "useDefineForClassFields": true,
     "resolveJsonModule": true,
+    "declaration": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "allowJs": true,
@@ -14,9 +15,15 @@
     "paths": {
       "@src/*": [
         "./src/*"
+      ],
+      "@/data-manager/*": [
+        "./src/libs/data-manager/*"
+      ],
+      "@/data-manager": [
+        "./src/libs/data-manager/index.ts"
       ]
     }
   },
-  "include": ["**/*.ts", "index.js"],
+  "include": ["**/*.ts", "index.js", ".log/**/*.ts"],
   "exclude": ["node_modules/"]
 }
