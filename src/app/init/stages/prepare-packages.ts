@@ -40,7 +40,7 @@ export default function preparePackages({
   })
 
   return new Promise<void>(resolve => {
-    const progress = execSync(
+    execSync(
       `cd ${projectRoot} && rm -rf node_modules package-lock.json pnpm-lock.yaml yarn.lock`,
       { encoding: 'utf-8' }
     )

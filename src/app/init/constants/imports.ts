@@ -3,8 +3,8 @@ const ESLINT_BASE = [
   'eslint-config-prettier@latest',
   'eslint-plugin-prettier@latest',
   'eslint-plugin-simple-import-sort@latest',
-  'typescript-eslint/eslint-plugin@latest',
-  'typescript-eslint/parser@latest',
+  '@typescript-eslint/eslint-plugin@latest',
+  '@typescript-eslint/parser@latest',
 ]
 
 export const ESLINT = {
