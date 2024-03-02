@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "cmd:init": "bun src/app/init/main.ts",
     "cmd": "bun src/app/cmd/main.ts",
     "cmd:generate-ts-type": "bun src/app/generate-ts-type/main.ts",
     "cmd:id": "bun src/app/id/main.ts",
-    "cmd:create:eslint": "bun src/app/create/eslint/main.ts",
     "write:cmd": "bun src/scripts/writeCmdIntoPackageScript/main.ts",
     "log": "bun --watch .log/main.ts"
   },

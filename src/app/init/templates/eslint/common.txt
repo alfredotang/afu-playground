@@ -8,7 +8,6 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:import/errors',
   ],
-  ignorePatterns: ['dist', '*.cjs', '*.js'],
   parser: '@typescript-eslint/parser',
   plugins: ['simple-import-sort', 'import', 'prettier'],
   settings: {
