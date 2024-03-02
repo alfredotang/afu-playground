@@ -5,6 +5,7 @@ const ESLINT_BASE = [
   'eslint-plugin-simple-import-sort@latest',
   '@typescript-eslint/eslint-plugin@latest',
   '@typescript-eslint/parser@latest',
+  'eslint-plugin-import',
 ]
 
 export const ESLINT = {
