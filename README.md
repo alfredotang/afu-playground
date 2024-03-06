@@ -6,6 +6,14 @@
 curl -fsSL https://bun.sh/install | bash
 ```
 
+## install [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#installation)
+### using homebrew
+
+```bash
+brew install fzf
+```
+
+
 ## install dependencies
 
 ```bash
