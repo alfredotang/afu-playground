@@ -17,10 +17,16 @@
         "./src/*"
       ],
       "@/data-manager/*": [
-        "./src/libs/data-manager/*"
+        "../soie/packages/data-manager/src/*"
       ],
       "@/data-manager": [
-        "./src/libs/data-manager/index.ts"
+        "../soie/packages/data-manager/src/index.ts"
+      ],
+      "@/fetcher/*": [
+        "../soie/packages/fetcher/src/*"
+      ],
+      "@/fetcher": [
+        "../soie/packages/fetcher/src/index.ts"
       ]
     }
   },

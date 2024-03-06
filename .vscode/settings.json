@@ -3,7 +3,9 @@
     "codemod",
     "consola",
     "IKALA",
+    "nums",
     "outdir",
-    "soie"
+    "soie",
+    "strs"
   ]
 }

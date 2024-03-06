@@ -9,7 +9,7 @@ import {
   preparePrettier,
   prepareVscodeSettings,
 } from './stages'
-import logger from '@src/libs/logger'
+import fzf from '@src/utils/fzf'
 
 const projects = execSync(`cd ~/Documents/projects && ls`, {
   encoding: 'utf-8',
@@ -29,11 +29,7 @@ const getProjectInfo = (project: string) => {
 }
 
 const main = async () => {
-  const project = await prompt('pick the project', {
-    type: 'select',
-    options: projects.split('\n').filter(Boolean),
-  })
-
+  const project = await fzf(projects)
   const isUsingTailwindcss = await prompt('using tailwindcss ?', {
     type: 'confirm',
   })
