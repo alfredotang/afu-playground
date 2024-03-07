@@ -8,13 +8,18 @@ export default async function preparePrettier({
   projectRoot,
   isESM,
   isUsingTailwindcss,
+  isNextJS,
 }: {
   projectRoot: string
   isUsingTailwindcss: boolean
   isESM: boolean
+  isNextJS: boolean
 }) {
   logger.info('prepare prettier')
-  const prettierIgnore = await readFile(PATH.prettier.ignore, 'utf-8')
+  const prettierIgnore = await readFile(
+    isNextJS ? PATH.prettier.ignore.next : PATH.prettier.ignore.common,
+    'utf-8'
+  )
   const prettier = await readFile(
     isUsingTailwindcss ? PATH.prettier.tailwindcss : PATH.prettier.common,
     'utf-8'

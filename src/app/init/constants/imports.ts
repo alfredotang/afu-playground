@@ -33,3 +33,15 @@ export const TAILWINDCSS = {
     'autoprefixer@latest',
   ],
 }
+
+export const VITE = {
+  devDependencies: ['vite-plugin-checker@latest'],
+}
+
+export const BASE = {
+  devDependencies: [
+    'vite@latest',
+    'vitest@latest',
+    'vite-tsconfig-paths@latest',
+  ],
+}

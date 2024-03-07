@@ -14,7 +14,10 @@ export default async function prepareEslint({
   isESM: boolean
 }) {
   logger.info('prepare eslint')
-  const eslintIgnore = await readFile(PATH.eslint.ignore, 'utf-8')
+  const eslintIgnore = await readFile(
+    isNextJS ? PATH.eslint.ignore.next : PATH.eslint.ignore.common,
+    'utf-8'
+  )
   const eslint = await readFile(
     isNextJS ? PATH.eslint.next : PATH.eslint.common,
     'utf-8'
