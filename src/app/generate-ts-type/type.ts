@@ -1,9 +1,16 @@
 type GeneratedType = {
-  abilities: Array<{
-    ability: { name: string; url: string }
-    isHidden: boolean
-    slot: number
-  }>
+  abilities: Array<
+    | {
+        ability: { name: string; url: string }
+        isHidden: undefined
+        slot: number
+      }
+    | {
+        ability: { name: string; url: string }
+        isHidden: boolean
+        slot: number
+      }
+  >
   baseExperience: number
   forms: Array<{ name: string; url: string }>
   gameIndices: Array<{
@@ -15,14 +22,54 @@ type GeneratedType = {
   id: number
   isDefault: boolean
   locationAreaEncounters: string
-  moves: Array<{
-    move: { name: string; url: string }
-    versionGroupDetails: Array<{
-      levelLearnedAt: number
-      moveLearnMethod: { name: string; url: string }
-      versionGroup: { name: string; url: string }
-    }>
-  }>
+  moves: Array<
+    | {
+        move: { name: string; url: string }
+        versionGroupDetails: Array<
+          | {
+              levelLearnedAt: undefined
+              moveLearnMethod: { name: string; url: string }
+              versionGroup: { name: string; url: string }
+            }
+          | {
+              levelLearnedAt: number
+              moveLearnMethod: { name: string; url: string }
+              versionGroup: { name: string; url: string }
+            }
+        >
+      }
+    | {
+        move: { name: string; url: string }
+        versionGroupDetails: Array<
+          | {
+              levelLearnedAt: number
+              moveLearnMethod: { name: string; url: string }
+              versionGroup: { name: string; url: string }
+            }
+          | {
+              levelLearnedAt: undefined
+              moveLearnMethod: { name: string; url: string }
+              versionGroup: { name: string; url: string }
+            }
+        >
+      }
+    | {
+        move: { name: string; url: string }
+        versionGroupDetails: Array<{
+          levelLearnedAt: undefined
+          moveLearnMethod: { name: string; url: string }
+          versionGroup: { name: string; url: string }
+        }>
+      }
+    | {
+        move: { name: string; url: string }
+        versionGroupDetails: Array<{
+          levelLearnedAt: number
+          moveLearnMethod: { name: string; url: string }
+          versionGroup: { name: string; url: string }
+        }>
+      }
+  >
   name: string
   order: number
   pastAbilities: Array<unknown>
@@ -38,7 +85,7 @@ type GeneratedType = {
     frontShiny: string
     frontShinyFemale: string
     other: {
-      dreamWorld: { frontDefault: string; frontFemale: null }
+      dreamWorld: { frontDefault: string; frontFemale: undefined }
       home: {
         frontDefault: string
         frontFemale: string
@@ -50,7 +97,7 @@ type GeneratedType = {
         backDefault: string
         backFemale: string
         backShiny: string
-        backShinyFemale: null
+        backShinyFemale: undefined
         frontDefault: string
         frontFemale: string
         frontShiny: string
@@ -120,9 +167,9 @@ type GeneratedType = {
       generationIv: {
         diamondPearl: {
           backDefault: string
-          backFemale: null
+          backFemale: undefined
           backShiny: string
-          backShinyFemale: null
+          backShinyFemale: undefined
           frontDefault: string
           frontFemale: string
           frontShiny: string
@@ -186,7 +233,7 @@ type GeneratedType = {
         }
       }
       generationVii: {
-        icons: { frontDefault: string; frontFemale: null }
+        icons: { frontDefault: string; frontFemale: undefined }
         ultraSunUltraMoon: {
           frontDefault: string
           frontFemale: string
@@ -194,14 +241,19 @@ type GeneratedType = {
           frontShinyFemale: string
         }
       }
-      generationViii: { icons: { frontDefault: string; frontFemale: null } }
+      generationViii: {
+        icons: { frontDefault: string; frontFemale: undefined }
+      }
     }
   }
-  stats: Array<{
-    baseStat: number
-    effort: number
-    stat: { name: string; url: string }
-  }>
+  stats: Array<
+    | {
+        baseStat: number
+        effort: undefined
+        stat: { name: string; url: string }
+      }
+    | { baseStat: number; effort: number; stat: { name: string; url: string } }
+  >
   types: Array<{ slot: number; type: { name: string; url: string } }>
   weight: number
 }

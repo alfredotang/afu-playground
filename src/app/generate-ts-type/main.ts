@@ -3,6 +3,8 @@ import path from 'path'
 import camelcaseKeys from 'camelcase-keys'
 import getType from '@/src/utils/get-type'
 import prompt from '@/src/libs/prompt'
+import copyToClipboard from '@/src/utils/copy-to-clipboard'
+import logger from '@/src/libs/logger'
 
 type GenericObject = {
   [key: string]: any
@@ -30,6 +32,8 @@ const main = async () => {
     : parseEntry
   const data = generateTypeScriptType(entry)
   writeFileSync(path.join(__dirname, 'type.ts'), data)
+  await copyToClipboard(data)
+  logger.success('copied!')
 }
 
 main()
