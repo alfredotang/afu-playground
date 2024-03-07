@@ -7,9 +7,9 @@ import {
 } from 'node:fs'
 import path from 'node:path'
 import template from 'lodash/fp/template'
-import prompt from '@src/libs/prompt'
-import { IKALA } from '@src/constants/path'
-import pascalCase from '@src/utils/pascal-case'
+import prompt from '@/src/libs/prompt'
+import { IKALA } from '@/src/constants/path'
+import pascalCase from '@/src/utils/pascal-case'
 
 const indexTemplatePath = path.join(__dirname, 'templates/index.txt')
 const tsxTemplatePath = path.join(__dirname, 'templates/tsx.txt')

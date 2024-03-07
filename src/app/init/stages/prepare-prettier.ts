@@ -1,7 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
-import { PATH } from '@src/app/init/constants/path'
-import logger from '@src/libs/logger'
+import { PATH } from '@/src/app/init/constants/path'
+import logger from '@/src/libs/logger'
 import { execSync } from 'node:child_process'
 
 export default async function preparePrettier({

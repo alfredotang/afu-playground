@@ -1,5 +1,5 @@
-import { TypeTagEnum } from '@src/constants/typeTag'
-import getTypeTag from '@src/utils/get-type-tag'
+import { TypeTagEnum } from '@/src/constants/typeTag'
+import getTypeTag from '@/src/utils/get-type-tag'
 
 const getUniqueTypes = (values: any[]): string[] => {
   return Array.from(new Set(values.map((value: any) => getType(value))))

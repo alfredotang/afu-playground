@@ -1,8 +1,8 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
-import { ROOT } from '@src/constants/path'
-import parseAppDir from '@src/utils/parse-app-dir'
-import logger from '@src/libs/logger'
+import { ROOT } from '@/src/constants/path'
+import parseAppDir from '@/src/utils/parse-app-dir'
+import logger from '@/src/libs/logger'
 
 const PKG_PATH = path.join(ROOT, 'package.json')
 const APP_PATH = path.join(ROOT, 'src/app')

@@ -1,15 +1,15 @@
 import { readFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import path from 'node:path'
-import prompt from '@src/libs/prompt'
-import { ROOT } from '@src/constants/path'
+import prompt from '@/src/libs/prompt'
+import { ROOT } from '@/src/constants/path'
 import {
   prepareEslint,
   preparePackages,
   preparePrettier,
   prepareVscodeSettings,
 } from './stages'
-import fzf from '@src/utils/fzf'
+import fzf from '@/src/utils/fzf'
 
 const projects = execSync(`cd ~/Documents/projects && ls`, {
   encoding: 'utf-8',

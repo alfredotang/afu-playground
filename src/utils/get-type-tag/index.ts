@@ -1,4 +1,4 @@
-import { TypeTagEnum } from '@src/constants/typeTag'
+import { TypeTagEnum } from '@/src/constants/typeTag'
 import isNull from 'lodash/fp/isNull'
 import isNaN from 'lodash/fp/isNaN'
 

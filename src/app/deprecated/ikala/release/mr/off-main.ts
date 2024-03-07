@@ -1,9 +1,9 @@
 import kebabCase from 'lodash/fp/kebabCase'
-import constantCase from '@src/utils/constant-case'
-import { CreateIkalaGitlabAPI } from '@src/services'
-import prompt from '@src/libs/prompt'
-import logger from '@src/libs/logger'
-import { GITLAB_PROJECT_ID } from '@src/constants/gitlab'
+import constantCase from '@/src/utils/constant-case'
+import { CreateIkalaGitlabAPI } from '@/src/services'
+import prompt from '@/src/libs/prompt'
+import logger from '@/src/libs/logger'
+import { GITLAB_PROJECT_ID } from '@/src/constants/gitlab'
 
 type Env = 'rc' | 'production'
 

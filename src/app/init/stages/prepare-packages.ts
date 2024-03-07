@@ -1,5 +1,5 @@
-import { ESLINT, PRETTIER, TAILWINDCSS } from '@src/app/init/constants/imports'
-import logger from '@src/libs/logger'
+import { ESLINT, PRETTIER, TAILWINDCSS } from '@/src/app/init/constants/imports'
+import logger from '@/src/libs/logger'
 import { execSync } from 'node:child_process'
 
 const getImportPackages = ({

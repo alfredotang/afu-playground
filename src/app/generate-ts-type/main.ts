@@ -1,8 +1,8 @@
 import { writeFileSync, readFileSync } from 'node:fs'
 import path from 'path'
 import camelcaseKeys from 'camelcase-keys'
-import getType from '@src/utils/get-type'
-import prompt from '@src/libs/prompt'
+import getType from '@/src/utils/get-type'
+import prompt from '@/src/libs/prompt'
 
 type GenericObject = {
   [key: string]: any
