@@ -20,7 +20,7 @@ brew install fzf
 bun install
 ```
 
-## prepare env
+## **deprecated** prepare env
 ```bash
 cp -R .env.example .env
 ```

@@ -1,13 +1,13 @@
-import { readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import { ROOT } from '@/src/constants/path'
 import parseAppDir from '@/src/utils/parse-app-dir'
 import logger from '@/src/libs/logger'
+import readPackageJson from '@/src/utils/read-package-json'
+import writePackageJson from '@/src/utils/write-package-json'
 
-const PKG_PATH = path.join(ROOT, 'package.json')
 const APP_PATH = path.join(ROOT, 'src/app')
 
-const pkg = JSON.parse(readFileSync(PKG_PATH, 'utf-8'))
+const pkg = readPackageJson(ROOT)
 
 const getEntryPoints = () => {
   const result: string[] = []
@@ -37,12 +37,6 @@ const cmdScripts = entryPoints.reduce<Record<string, string>>(
   {}
 )
 
-const newPkg = JSON.stringify(
-  { ...pkg, scripts: { ...cmdScripts, ...othersScripts } },
-  null,
-  2
-)
-
-writeFileSync(PKG_PATH, newPkg)
+writePackageJson(ROOT, { ...pkg, scripts: { ...cmdScripts, ...othersScripts } })
 
 logger.success(`package.json scripts is update!`)
