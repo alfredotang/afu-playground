@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import { ROOT } from '@src/constants/path'
-import parseAppDir from '@src/utils/parseAppDir'
+import parseAppDir from '@src/utils/parse-app-dir'
 import logger from '@src/libs/logger'
 
 const PKG_PATH = path.join(ROOT, 'package.json')
@@ -25,13 +25,23 @@ const othersScripts = Object.keys(pkg.scripts)
     return collation
   }, {})
 
-const cmdScripts = entryPoints.reduce<Record<string, string>>((collation, entryPoint) => {
-  const scriptKey = entryPoint === 'cmd' ? entryPoint : `cmd:${entryPoint.split('/').filter(Boolean).join(':')}`
-  collation[scriptKey] = `bun src/app/${entryPoint}/main.ts`
-  return collation
-}, {})
+const cmdScripts = entryPoints.reduce<Record<string, string>>(
+  (collation, entryPoint) => {
+    const scriptKey =
+      entryPoint === 'cmd'
+        ? entryPoint
+        : `cmd:${entryPoint.split('/').filter(Boolean).join(':')}`
+    collation[scriptKey] = `bun src/app/${entryPoint}/main.ts`
+    return collation
+  },
+  {}
+)
 
-const newPkg = JSON.stringify({ ...pkg, scripts: { ...cmdScripts, ...othersScripts } }, null, 2)
+const newPkg = JSON.stringify(
+  { ...pkg, scripts: { ...cmdScripts, ...othersScripts } },
+  null,
+  2
+)
 
 writeFileSync(PKG_PATH, newPkg)
 

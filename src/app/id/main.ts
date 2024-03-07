@@ -2,7 +2,7 @@ import { nanoid } from 'nanoid'
 import { v4 as uuid } from 'uuid'
 import prompt from '@src/libs/prompt'
 import logger from '@src/libs/logger'
-import copyToClipboard from '@src/utils/copyToClipboard'
+import copyToClipboard from '@src/utils/copy-to-clipboard'
 
 const ID_CONFIG = {
   nanoid,

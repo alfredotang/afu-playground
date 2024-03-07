@@ -1,5 +1,5 @@
 import { TypeTagEnum } from '@src/constants/typeTag'
-import getTypeTag from '@src/utils/getTypeTag'
+import getTypeTag from '@src/utils/get-type-tag'
 
 const getUniqueTypes = (values: any[]): string[] => {
   return Array.from(new Set(values.map((value: any) => getType(value))))
@@ -32,13 +32,15 @@ const getType = (value: any): string => {
     const keyTypes = getUniqueTypes(Array.from(value.keys()))
     const valueTypes = getUniqueTypes(Array.from(value.values()))
     const keyType = keyTypes.length === 1 ? keyTypes[0] : keyTypes.join('|')
-    const valueType = valueTypes.length === 1 ? valueTypes[0] : valueTypes.join('|')
+    const valueType =
+      valueTypes.length === 1 ? valueTypes[0] : valueTypes.join('|')
     return `Map<${keyType}, ${valueType}>`
   }
 
   if (typeTag === TypeTagEnum.Set) {
     const valueTypes = getUniqueTypes(Array.from(value.values()))
-    const valueType = valueTypes.length === 1 ? valueTypes[0] : valueTypes.join('|')
+    const valueType =
+      valueTypes.length === 1 ? valueTypes[0] : valueTypes.join('|')
     return `Set<${valueType || 'any'}>`
   }
 

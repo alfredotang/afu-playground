@@ -8,7 +8,7 @@
     "cmd": "bun src/app/cmd/main.ts",
     "cmd:generate-ts-type": "bun src/app/generate-ts-type/main.ts",
     "cmd:id": "bun src/app/id/main.ts",
-    "write:cmd": "bun src/scripts/writeCmdIntoPackageScript/main.ts",
+    "build": "bun src/scripts/write-cmd-into-package-script.ts",
     "log": "bun --watch .log/main.ts"
   },
   "keywords": [],

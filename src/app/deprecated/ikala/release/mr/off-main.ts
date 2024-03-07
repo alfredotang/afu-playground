@@ -1,5 +1,5 @@
 import kebabCase from 'lodash/fp/kebabCase'
-import constantCase from '@src/utils/constantCase'
+import constantCase from '@src/utils/constant-case'
 import { CreateIkalaGitlabAPI } from '@src/services'
 import prompt from '@src/libs/prompt'
 import logger from '@src/libs/logger'
@@ -29,9 +29,13 @@ const main = async () => {
       options: milestoneList.map(({ title }) => title),
     })
 
-    const milestoneId = milestoneList.find(item => item.title === milestoneTitle)?.id || 0
+    const milestoneId =
+      milestoneList.find(item => item.title === milestoneTitle)?.id || 0
 
-    const mergeRequestParams: Record<Env, Parameters<typeof api.postMergeRequestWithMergedDescription>[0]> = {
+    const mergeRequestParams: Record<
+      Env,
+      Parameters<typeof api.postMergeRequestWithMergedDescription>[0]
+    > = {
       production: {
         title: milestoneTitle.replace('rc_', 'production_'),
         milestoneId,
@@ -50,7 +54,9 @@ const main = async () => {
       },
     }
 
-    await api.postMergeRequestWithMergedDescription(mergeRequestParams[targetEnv])
+    await api.postMergeRequestWithMergedDescription(
+      mergeRequestParams[targetEnv]
+    )
     logger.success('done')
   } catch (error) {
     logger.error(error)
