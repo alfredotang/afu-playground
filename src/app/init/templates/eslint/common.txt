@@ -29,7 +29,7 @@ module.exports = {
         groups: [
           ['^\\u0000'],
           ['^node'],
-          ['^vite', '^@vite']
+          ['^vite', '^@vite'],
           ['^react'],
           ['^next'],
           ['^@?\\w'],
