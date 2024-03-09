@@ -50,16 +50,8 @@ log ts 到 terminal 上
 
 建立 log 檔案
 ```bash
-mkdir .log
-touch .log/main.ts
+bun setup:log
 ```
-範例
-```ts
-// example
-// .log/main.ts
-console.log('hello')
-```
-
 執行
 ```bash
 bun log

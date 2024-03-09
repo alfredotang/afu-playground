@@ -15,7 +15,19 @@
     "paths": {
       "@/*": [
         "./*"
-      ]
+      ],
+      "@external/data-manager/*": [
+        "../soie/packages/data-manager/src/*"
+      ],
+      "@external/data-manager": [
+        "../soie/packages/data-manager/src/index.ts"
+      ],
+      "@external/fetcher/*": [
+        "../soie/packages/fetcher/src/*"
+      ],
+      "@external/fetcher": [
+        "../soie/packages/fetcher/src/index.ts"
+      ],
     }
   },
   "include": ["**/*.ts", "index.js", ".log/**/*.ts"],
