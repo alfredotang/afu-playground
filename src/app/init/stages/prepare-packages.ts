@@ -1,15 +1,17 @@
+import { execSync } from 'node:child_process'
+
+import { globSync } from 'glob'
+
 import {
+  BASE,
   ESLINT,
   PRETTIER,
   TAILWINDCSS,
   VITE,
-  BASE,
 } from '@/src/app/init/constants/imports'
 import logger from '@/src/libs/logger'
 import readPackageJson from '@/src/utils/read-package-json'
 import writePackageJson from '@/src/utils/write-package-json'
-import { execSync } from 'node:child_process'
-import { globSync } from 'glob'
 
 const isTailwindConfigExist = (target: string) =>
   globSync(`${target}/tailwind.config.*`, {

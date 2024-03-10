@@ -1,10 +1,12 @@
-import { writeFileSync, readFileSync } from 'node:fs'
-import path from 'path'
+import { readFileSync, writeFileSync } from 'node:fs'
+
 import camelcaseKeys from 'camelcase-keys'
-import getType from '@/src/utils/get-type'
+import path from 'path'
+
+import logger from '@/src/libs/logger'
 import prompt from '@/src/libs/prompt'
 import copyToClipboard from '@/src/utils/copy-to-clipboard'
-import logger from '@/src/libs/logger'
+import getType from '@/src/utils/get-type'
 
 type GenericObject = {
   [key: string]: any
@@ -15,7 +17,7 @@ function generateTypeScriptType(obj: GenericObject): string {
     const typeKey = key.includes('-') ? `'${key}'` : key
     acc += `  ${typeKey}: ${getType(value)}\n`
     return acc
-  }, 'type GeneratedType = {\n')
+  }, 'export type GeneratedType = {\n')
 
   return `${result}}`
 }

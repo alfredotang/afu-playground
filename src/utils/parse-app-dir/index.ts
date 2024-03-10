@@ -1,4 +1,4 @@
-import { readdirSync, existsSync } from 'node:fs'
+import { existsSync, readdirSync } from 'node:fs'
 import path from 'node:path'
 
 type ReaddirSyncParams = Parameters<typeof readdirSync>
@@ -12,7 +12,15 @@ const readDirSafeSync = (path: ReaddirSyncParams[0]) => {
   }
 }
 
-const parseAppDir = ({ root, result, resultPath = '' }: { root: string; result: string[]; resultPath?: string }) => {
+const parseAppDir = ({
+  root,
+  result,
+  resultPath = '',
+}: {
+  root: string
+  result: string[]
+  resultPath?: string
+}) => {
   const dirs = readDirSafeSync(root)
   if (!dirs?.length) return
   for (const dir of dirs) {

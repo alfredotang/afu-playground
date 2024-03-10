@@ -1,5 +1,6 @@
-import { writeFileSync, existsSync } from 'node:fs'
+import { existsSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
+
 import logger from '@/src/libs/logger'
 
 const writePackageJson = (path: string, content: object) => {

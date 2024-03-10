@@ -1,5 +1,2 @@
-dist/main.js
 node_modules
-*.txt
-ed.js
-bun.lockb
+dist

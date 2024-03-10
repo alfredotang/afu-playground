@@ -1,9 +1,10 @@
-import { readFileSync } from 'node:fs'
 import { spawn } from 'node:child_process'
+import { readFileSync } from 'node:fs'
 import path from 'node:path'
-import prompt from '@/src/libs/prompt'
-import logger from '@/src/libs/logger'
+
 import { ROOT } from '@/src/constants/path'
+import logger from '@/src/libs/logger'
+import prompt from '@/src/libs/prompt'
 
 const fetchCommandDict = (): Promise<string[]> =>
   new Promise(resolve => {

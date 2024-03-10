@@ -24,8 +24,22 @@ export interface MergeRequest {
   state: string
   created_at: string
   updated_at: string
-  merged_by: { id: number; username: string; name: string; state: string; avatar_url: string; web_url: string }
-  merge_user: { id: number; username: string; name: string; state: string; avatar_url: string; web_url: string }
+  merged_by: {
+    id: number
+    username: string
+    name: string
+    state: string
+    avatar_url: string
+    web_url: string
+  }
+  merge_user: {
+    id: number
+    username: string
+    name: string
+    state: string
+    avatar_url: string
+    web_url: string
+  }
   merged_at: string
   closed_by: string | null
   closed_at: string | null
@@ -34,9 +48,30 @@ export interface MergeRequest {
   user_notes_count: number
   upvotes: number
   downvotes: number
-  author: { id: number; username: string; name: string; state: string; avatar_url: string; web_url: string }
-  assignees: Array<{ id: number; username: string; name: string; state: string; avatar_url: string; web_url: string }>
-  assignee: { id: number; username: string; name: string; state: string; avatar_url: string; web_url: string }
+  author: {
+    id: number
+    username: string
+    name: string
+    state: string
+    avatar_url: string
+    web_url: string
+  }
+  assignees: Array<{
+    id: number
+    username: string
+    name: string
+    state: string
+    avatar_url: string
+    web_url: string
+  }>
+  assignee: {
+    id: number
+    username: string
+    name: string
+    state: string
+    avatar_url: string
+    web_url: string
+  }
   reviewers: Array<string>
   source_project_id: number
   target_project_id: number

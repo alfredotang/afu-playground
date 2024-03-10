@@ -1,10 +1,10 @@
 import { execSync } from 'node:child_process'
 import path from 'node:path'
+
 import { ROOT } from '@/src/constants/path'
+import logger from '@/src/libs/logger'
 import prompt from '@/src/libs/prompt'
 import fzf from '@/src/utils/fzf'
-import readPackageJson from '@/src/utils/read-package-json'
-import logger from '@/src/libs/logger'
 
 type Starter = 'vite' | 'next'
 

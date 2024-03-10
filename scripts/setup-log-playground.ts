@@ -1,6 +1,7 @@
 import { execSync } from 'node:child_process'
 import { existsSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
+
 import { ROOT } from '@/src/constants/path'
 import creteSafeDir from '@/src/utils/create-safe-dir'
 

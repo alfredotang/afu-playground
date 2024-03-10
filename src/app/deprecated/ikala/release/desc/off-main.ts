@@ -1,9 +1,10 @@
 import kebabCase from 'lodash/fp/kebabCase'
-import constantCase from '@/src/utils/constant-case'
-import { CreateIkalaGitlabAPI } from '@/src/services'
-import prompt from '@/src/libs/prompt'
-import logger from '@/src/libs/logger'
+
 import { GITLAB_PROJECT_ID } from '@/src/constants/gitlab'
+import logger from '@/src/libs/logger'
+import prompt from '@/src/libs/prompt'
+import { CreateIkalaGitlabAPI } from '@/src/services'
+import constantCase from '@/src/utils/constant-case'
 
 const main = async () => {
   const targetProject = await prompt('選擇專案', {

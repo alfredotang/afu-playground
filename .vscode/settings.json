@@ -1,12 +1,19 @@
 {
-  "cSpell.words": [
-    "codemod",
-    "consola",
-    "IKALA",
-    "nums",
-    "outdir",
-    "soie",
-    "Stringifiable",
-    "strs"
-  ]
+  "cSpell.words": [                                                                                                                                                       │
+    "codemod",                                                                                                                                                            │
+    "consola",                                                                                                                                                            │
+    "IKALA",                                                                                                                                                              │
+    "nums",                                                                                                                                                               │
+    "outdir",                                                                                                                                                             │
+    "soie",                                                                                                                                                               │
+    "Stringifiable",                                                                                                                                                      │
+    "strs"                                                                                                                                                                │
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.sortJSON": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
+
+

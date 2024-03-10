@@ -1,11 +1,13 @@
 import axios, { AxiosInstance } from 'axios'
-import type { Milestone, MergeRequest, Branch } from './type'
-import snakecaseKeys from 'snakecase-keys'
 import pickBy from 'lodash/fp/pickBy'
 import pipe from 'lodash/fp/pipe'
+import snakecaseKeys from 'snakecase-keys'
+
+import { GITLAB_API_URL, IKALA_TEAM_GROUP } from '@/src/constants/gitlab'
 import logger from '@/src/libs/logger'
 import prompt from '@/src/libs/prompt'
-import { IKALA_TEAM_GROUP, GITLAB_API_URL } from '@/src/constants/gitlab'
+
+import type { Branch, MergeRequest, Milestone } from './type'
 
 export * from './type'
 

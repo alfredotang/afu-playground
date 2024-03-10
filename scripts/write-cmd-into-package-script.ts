@@ -1,7 +1,8 @@
 import path from 'node:path'
+
 import { ROOT } from '@/src/constants/path'
-import parseAppDir from '@/src/utils/parse-app-dir'
 import logger from '@/src/libs/logger'
+import parseAppDir from '@/src/utils/parse-app-dir'
 import readPackageJson from '@/src/utils/read-package-json'
 import writePackageJson from '@/src/utils/write-package-json'
 

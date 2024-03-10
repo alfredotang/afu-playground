@@ -1,4 +1,4 @@
-type GeneratedType = {
+export type GeneratedType = {
   abilities: Array<
     | {
         ability: { name: string; url: string }

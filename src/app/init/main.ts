@@ -2,8 +2,8 @@ import {
   prepareEslint,
   preparePackages,
   preparePrettier,
-  prepareVscodeSettings,
   prepareProjectInfo,
+  prepareVscodeSettings,
 } from './stages'
 
 const main = async () => {
