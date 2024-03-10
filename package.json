@@ -11,8 +11,7 @@
     "setup:log": "bun scripts/setup-log-playground.ts",
     "build": "bun scripts/write-cmd-into-package-script.ts",
     "log": "bun --watch .log/main.ts",
-    "format": "eslint --fix ./src",
-    "lint": "eslint"
+    "format": "eslint --fix ./src"
   },
   "keywords": [],
   "author": "",
