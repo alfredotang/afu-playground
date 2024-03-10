@@ -45,7 +45,7 @@ const getImportPackages = ({
   const eslintDeps = isNextJS ? ESLINT.NEXT : ESLINT.COMMON
   const prettierDeps = isUsingTailwindcss
     ? PRETTIER.TAILWINDCSS
-    : PRETTIER.TAILWINDCSS
+    : PRETTIER.COMMON
 
   return {
     devDependencies: [
