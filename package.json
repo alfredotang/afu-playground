@@ -8,6 +8,7 @@
     "cmd": "bun src/app/cmd/main.ts",
     "cmd:generate-ts-type": "bun src/app/generate-ts-type/main.ts",
     "cmd:id": "bun src/app/id/main.ts",
+    "cmd:transform-shadcn-color": "bun src/app/transform-shadcn-color/main.ts",
     "setup:log": "bun scripts/setup-log-playground.ts",
     "build": "bun scripts/write-cmd-into-package-script.ts",
     "log": "bun --watch .log/main.ts",
