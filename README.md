@@ -1,4 +1,5 @@
 # afu-playground
+
 此專案是用 [bun](https://bun.sh/) 當作 JavaScript runtime 取代 nodeJS
 所以使用前可以先安裝 [bun](https://bun.sh/)
 
@@ -7,12 +8,12 @@ curl -fsSL https://bun.sh/install | bash
 ```
 
 ## install [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#installation)
+
 ### using homebrew
 
 ```bash
 brew install fzf
 ```
-
 
 ## install dependencies
 
@@ -20,48 +21,44 @@ brew install fzf
 bun install
 ```
 
-## **deprecated** prepare env
-```bash
-cp -R .env.example .env
-```
-- `PROJECT_ROOT_PATH`
-  - 這個專案的絕對路徑, ex. `~/project/afu-playground`
-- `IKALA_ROOT_PATH`
-  - portal & cdp-management 所屬的資料夾，如果在不同資料夾，需要把他們放在一起
-  - ex. portal & cdp-management 都放在 `~/project`
-  - 那就填入 `~/project`
-- `GITLAB_API_TOKEN`
-  - ![go to preferences](./images/img-2023-05-23%20at%2005.11.14.png)
-  - ![go to access tokens](./images/img-2023-05-23%20at%2005.12.00.png)
-
 ## cmd
+
 顯示所有可以執行的 script，可以用這個來選擇要執行的 `cmd`
+
 ```bash
 bun cmd
 ```
 
 建立 release MR (rc or production)
+
 ```bash
 bun cmd:release:mr
 ```
 
 ## log
+
 log ts 到 terminal 上
 
 建立 log 檔案
+
 ```bash
 bun setup:log
 ```
+
 執行
+
 ```bash
 bun log
 ```
 
 ## develop
+
 若要開發新的 cmd ，一律放在 `src/app` 底下。新增/異動後，執行
+
 ```bash
 bun write:cmd
 ```
+
 會自動根據 `src/app` 的結構，產生對應的 scripts 到 `package.json`
 
 ```bash
