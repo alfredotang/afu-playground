@@ -11,7 +11,7 @@
     "cmd:transform-shadcn-color": "bun src/app/transform-shadcn-color/main.ts",
     "setup:log": "bun scripts/setup-log-playground.ts",
     "build": "bun scripts/write-cmd-into-package-script.ts",
-    "log": "bun --watch .log/main.ts",
+    "log": "bun scripts/watch-file.ts",
     "format": "eslint --fix ./src"
   },
   "keywords": [],

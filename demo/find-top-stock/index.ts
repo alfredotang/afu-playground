@@ -15,8 +15,7 @@ function topK(data: StockChoiceByUser, k: number) {
 
   // o(m)
   for (const stock of stocks) {
-    const previous = hashMap.get(stock) || 0
-    hashMap.set(stock, previous + 1)
+    hashMap.set(stock, (hashMap.get(stock) || 0) + 1)
   }
 
   // console.log(hashMap)
