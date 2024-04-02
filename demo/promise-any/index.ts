@@ -1,6 +1,6 @@
 const promiseAny = (promises: Array<Promise<unknown>>) =>
   new Promise((resolve, reject) => {
-    let errors: unknown[] = []
+    const errors: unknown[] = []
 
     promises.map(promise => {
       promise.then(resolve).catch(error => {
@@ -19,11 +19,11 @@ const pErr = new Promise((resolve, reject) => {
   reject('Always fails')
 })
 
-const pSlow = new Promise((resolve, reject) => {
+const pSlow = new Promise(resolve => {
   setTimeout(resolve, 101, 'pSlow')
 })
 
-const pFast = new Promise((resolve, reject) => {
+const pFast = new Promise(resolve => {
   setTimeout(resolve, 100, 'pFast')
 })
 

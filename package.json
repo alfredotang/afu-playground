@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@soie/data-manager": "^1.0.1",
+    "@soie/data-manager": "^2.2.0",
     "@soie/fetcher": "^0.5.3",
     "axios": "^1.6.7",
     "boxen": "^7.0.2",
