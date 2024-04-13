@@ -25,6 +25,7 @@
     "bun": "^1.0.29",
     "camelcase-keys": "^8.0.2",
     "chalk": "^5.2.0",
+    "change-case": "^5.4.4",
     "consola": "^3.1.0",
     "dayjs": "^1.11.10",
     "glob": "^10.3.10",
@@ -43,7 +44,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.194",
     "@types/node": "^18.15.11",
-    "@types/uuid": "^9.0.1",
+    "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "bun-types": "latest",
