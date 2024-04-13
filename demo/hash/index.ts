@@ -40,5 +40,4 @@ const map = new MyMap([
   ['c', 3],
 ])
 
-console.log(map.has('a'), map.get('a'))
-console.log(map.has('e'), map.get('e'))
+console.log(map)
