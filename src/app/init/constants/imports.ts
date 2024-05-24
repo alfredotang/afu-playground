@@ -1,5 +1,5 @@
 const ESLINT_BASE = [
-  'eslint@latest',
+  'eslint@8.57.0',
   'eslint-config-prettier@latest',
   'eslint-plugin-prettier@latest',
   'eslint-plugin-simple-import-sort@latest',
