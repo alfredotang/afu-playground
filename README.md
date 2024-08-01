@@ -1,11 +1,6 @@
 # afu-playground
 
-此專案是用 [bun](https://bun.sh/) 當作 JavaScript runtime 取代 nodeJS
-所以使用前可以先安裝 [bun](https://bun.sh/)
-
-```bash
-curl -fsSL https://bun.sh/install | bash
-```
+## install [pnpm](https://pnpm.io/installation)
 
 ## install [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#installation)
 
@@ -18,7 +13,7 @@ brew install fzf
 ## install dependencies
 
 ```bash
-bun install
+pnpm install
 ```
 
 ## cmd
@@ -26,13 +21,7 @@ bun install
 顯示所有可以執行的 script，可以用這個來選擇要執行的 `cmd`
 
 ```bash
-bun cmd
-```
-
-建立 release MR (rc or production)
-
-```bash
-bun cmd:release:mr
+pnpm cmd
 ```
 
 ## log
@@ -42,13 +31,13 @@ log ts 到 terminal 上
 建立 log 檔案
 
 ```bash
-bun setup:log
+pnpm setup:log
 ```
 
 執行
 
 ```bash
-bun log
+pnpm log
 ```
 
 ## develop
@@ -56,7 +45,7 @@ bun log
 若要開發新的 cmd ，一律放在 `src/app` 底下。新增/異動後，執行
 
 ```bash
-bun write:cmd
+pnpm write:cmd
 ```
 
 會自動根據 `src/app` 的結構，產生對應的 scripts 到 `package.json`
@@ -64,20 +53,15 @@ bun write:cmd
 ```bash
 src/app
 ├── cmd
-│   └── main.ts -> `"cmd": "bun src/app/cmd/main.ts"`
-├── create-ikala-tsx -> `"cmd:create-ikala-tsx": "bun src/app/create-ikala-tsx/main.ts",`
-│   ├── main.ts
-│   └── templates
-│       ├── index.txt
-│       └── tsx.txt
+│   └── main.ts -> `"cmd": "tsx src/app/cmd/main.ts"`
 ├── generate-ts-type
 │   ├── entry.json
-│   └── main.ts -> `"cmd:generate-ts-type": "bun src/app/generate-ts-type/main.ts",`
+│   └── main.ts -> `"cmd:generate-ts-type": "tsx src/app/generate-ts-type/main.ts",`
 ├── id
-│   └── main.ts -> `"cmd:id": "bun src/app/id/main.ts",`
+│   └── main.ts -> `"cmd:id": "tsx src/app/id/main.ts",`
 └── release
     ├── desc
-    │   └── main.ts  -> `"cmd:release:desc": "bun src/app/release/desc/main.ts",`
+    │   └── main.ts  -> `"cmd:release:desc": "tsx src/app/release/desc/main.ts",`
     └── mr
-        └── main.ts -> `"cmd:release:mr": "bun src/app/release/mr/main.ts",`
+        └── main.ts -> `"cmd:release:mr": "tsx src/app/release/mr/main.ts",`
 ```

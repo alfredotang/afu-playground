@@ -10,14 +10,7 @@ const APP_PATH = path.join(ROOT, 'src/app')
 
 const pkg = readPackageJson(ROOT)
 
-const getEntryPoints = () => {
-  const result: string[] = []
-  parseAppDir({ root: APP_PATH, result })
-  return result
-  // .map(item => item.split('/').join(':'))
-}
-
-const entryPoints = getEntryPoints()
+const entryPoints = parseAppDir(APP_PATH)
 
 const othersScripts = Object.keys(pkg.scripts)
   .filter(script => !script.startsWith('cmd'))
@@ -32,7 +25,7 @@ const cmdScripts = entryPoints.reduce<Record<string, string>>(
       entryPoint === 'cmd'
         ? entryPoint
         : `cmd:${entryPoint.split('/').filter(Boolean).join(':')}`
-    collation[scriptKey] = `bun src/app/${entryPoint}/main.ts`
+    collation[scriptKey] = `tsx src/app/${entryPoint}/main.ts`
     return collation
   },
   {}

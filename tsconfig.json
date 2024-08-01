@@ -20,6 +20,6 @@
       "@external/fetcher": ["../soie/packages/fetcher/src/index.ts"]
     }
   },
-  "include": ["**/*.ts", "index.js", ".log/**/*.ts"],
+  "include": ["**/*.ts", ".log/**/*.ts", "demo/time/callback/index.js"],
   "exclude": ["node_modules/"]
 }

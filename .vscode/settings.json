@@ -1,13 +1,14 @@
 {
-  "cSpell.words": [                                                                                                                                                       │
-    "codemod",                                                                                                                                                            │
-    "consola",                                                                                                                                                            │
-    "IKALA",                                                                                                                                                              │
-    "nums",                                                                                                                                                               │
-    "outdir",                                                                                                                                                             │
-    "soie",                                                                                                                                                               │
-    "Stringifiable",                                                                                                                                                      │
-    "strs"                                                                                                                                                                │
+  "cSpell.words": [
+    "codemod",
+    "consola",
+    "IKALA",
+    "nums",
+    "outdir",
+    "soie",
+    "Stringifiable",
+    "strs",
+    "shadcn"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
@@ -15,5 +16,3 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
-
-

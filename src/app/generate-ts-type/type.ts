@@ -1,259 +1,99 @@
 export type GeneratedType = {
-  abilities: Array<
-    | {
-        ability: { name: string; url: string }
-        isHidden: undefined
-        slot: number
-      }
-    | {
-        ability: { name: string; url: string }
-        isHidden: boolean
-        slot: number
-      }
+  cryptokiVersion: number
+  flags: undefined
+  func: string
+  installedModule: Array<
+    | { description: string; version: string }
+    | { version: '1.3.5.1'; description: string }
   >
-  baseExperience: number
-  forms: Array<{ name: string; url: string }>
-  gameIndices: Array<{
-    gameIndex: number
-    version: { name: string; url: string }
-  }>
-  height: number
-  heldItems: Array<unknown>
-  id: number
-  isDefault: boolean
-  locationAreaEncounters: string
-  moves: Array<
-    | {
-        move: { name: string; url: string }
-        versionGroupDetails: Array<
-          | {
-              levelLearnedAt: undefined
-              moveLearnMethod: { name: string; url: string }
-              versionGroup: { name: string; url: string }
-            }
-          | {
-              levelLearnedAt: number
-              moveLearnMethod: { name: string; url: string }
-              versionGroup: { name: string; url: string }
-            }
-        >
-      }
-    | {
-        move: { name: string; url: string }
-        versionGroupDetails: Array<
-          | {
-              levelLearnedAt: number
-              moveLearnMethod: { name: string; url: string }
-              versionGroup: { name: string; url: string }
-            }
-          | {
-              levelLearnedAt: undefined
-              moveLearnMethod: { name: string; url: string }
-              versionGroup: { name: string; url: string }
-            }
-        >
-      }
-    | {
-        move: { name: string; url: string }
-        versionGroupDetails: Array<{
-          levelLearnedAt: undefined
-          moveLearnMethod: { name: string; url: string }
-          versionGroup: { name: string; url: string }
-        }>
-      }
-    | {
-        move: { name: string; url: string }
-        versionGroupDetails: Array<{
-          levelLearnedAt: number
-          moveLearnMethod: { name: string; url: string }
-          versionGroup: { name: string; url: string }
-        }>
-      }
-  >
-  name: string
-  order: number
-  pastAbilities: Array<unknown>
-  pastTypes: Array<unknown>
-  species: { name: string; url: string }
-  sprites: {
-    backDefault: string
-    backFemale: string
-    backShiny: string
-    backShinyFemale: string
-    frontDefault: string
-    frontFemale: string
-    frontShiny: string
-    frontShinyFemale: string
-    other: {
-      dreamWorld: { frontDefault: string; frontFemale: undefined }
-      home: {
-        frontDefault: string
-        frontFemale: string
-        frontShiny: string
-        frontShinyFemale: string
-      }
-      officialArtwork: { frontDefault: string; frontShiny: string }
-      showdown: {
-        backDefault: string
-        backFemale: string
-        backShiny: string
-        backShinyFemale: undefined
-        frontDefault: string
-        frontFemale: string
-        frontShiny: string
-        frontShinyFemale: string
-      }
-    }
-    versions: {
-      generationI: {
-        redBlue: {
-          backDefault: string
-          backGray: string
-          backTransparent: string
-          frontDefault: string
-          frontGray: string
-          frontTransparent: string
-        }
-        yellow: {
-          backDefault: string
-          backGray: string
-          backTransparent: string
-          frontDefault: string
-          frontGray: string
-          frontTransparent: string
-        }
-      }
-      generationIi: {
-        crystal: {
-          backDefault: string
-          backShiny: string
-          backShinyTransparent: string
-          backTransparent: string
-          frontDefault: string
-          frontShiny: string
-          frontShinyTransparent: string
-          frontTransparent: string
-        }
-        gold: {
-          backDefault: string
-          backShiny: string
-          frontDefault: string
-          frontShiny: string
-          frontTransparent: string
-        }
-        silver: {
-          backDefault: string
-          backShiny: string
-          frontDefault: string
-          frontShiny: string
-          frontTransparent: string
-        }
-      }
-      generationIii: {
-        emerald: { frontDefault: string; frontShiny: string }
-        fireredLeafgreen: {
-          backDefault: string
-          backShiny: string
-          frontDefault: string
-          frontShiny: string
-        }
-        rubySapphire: {
-          backDefault: string
-          backShiny: string
-          frontDefault: string
-          frontShiny: string
-        }
-      }
-      generationIv: {
-        diamondPearl: {
-          backDefault: string
-          backFemale: undefined
-          backShiny: string
-          backShinyFemale: undefined
-          frontDefault: string
-          frontFemale: string
-          frontShiny: string
-          frontShinyFemale: string
-        }
-        heartgoldSoulsilver: {
-          backDefault: string
-          backFemale: string
-          backShiny: string
-          backShinyFemale: string
-          frontDefault: string
-          frontFemale: string
-          frontShiny: string
-          frontShinyFemale: string
-        }
-        platinum: {
-          backDefault: string
-          backFemale: string
-          backShiny: string
-          backShinyFemale: string
-          frontDefault: string
-          frontFemale: string
-          frontShiny: string
-          frontShinyFemale: string
-        }
-      }
-      generationV: {
-        blackWhite: {
-          animated: {
-            backDefault: string
-            backFemale: string
-            backShiny: string
-            backShinyFemale: string
-            frontDefault: string
-            frontFemale: string
-            frontShiny: string
-            frontShinyFemale: string
+  last_error: undefined
+  libraryDescription: string
+  libraryVersion: number
+  manufacturerID: string
+  ret_code: undefined
+  serverVersion: string
+  slots: Array<{
+    firmwareVersion: undefined
+    flags: number
+    hardwareVersion: undefined
+    manufacturerID: string
+    slotDescription: string
+    slotID: undefined
+    token: {
+      certs: Array<
+        | {
+            certb64: string
+            holderRank: string
+            id: string
+            issuerDN: string
+            label: string
+            notAfter: string
+            notAfterT: number
+            notBefore: string
+            notBeforeT: number
+            signatureAlgorithm: string
+            sn: string
+            subjectDN: string
+            subjectID: string
+            thumbprint: string
+            usage: string
           }
-          backDefault: string
-          backFemale: string
-          backShiny: string
-          backShinyFemale: string
-          frontDefault: string
-          frontFemale: string
-          frontShiny: string
-          frontShinyFemale: string
-        }
-      }
-      generationVi: {
-        omegarubyAlphasapphire: {
-          frontDefault: string
-          frontFemale: string
-          frontShiny: string
-          frontShinyFemale: string
-        }
-        xY: {
-          frontDefault: string
-          frontFemale: string
-          frontShiny: string
-          frontShinyFemale: string
-        }
-      }
-      generationVii: {
-        icons: { frontDefault: string; frontFemale: undefined }
-        ultraSunUltraMoon: {
-          frontDefault: string
-          frontFemale: string
-          frontShiny: string
-          frontShinyFemale: string
-        }
-      }
-      generationViii: {
-        icons: { frontDefault: string; frontFemale: undefined }
-      }
+        | {
+            certb64: string
+            id: string
+            issuerDN: string
+            label: string
+            notAfter: string
+            notAfterT: undefined
+            notBefore: string
+            notBeforeT: number
+            signatureAlgorithm: string
+            sn: string
+            subjectCN: string
+            subjectDN: string
+            thumbprint: string
+            usage: string
+          }
+        | {
+            certb64: string
+            id: string
+            issuerDN: string
+            label: string
+            notAfter: string
+            notAfterT: undefined
+            notBefore: string
+            notBeforeT: number
+            signatureAlgorithm: string
+            sn: string
+            subjectDN: string
+            thumbprint: string
+            usage: string
+          }
+      >
+      firmwareVersion: number
+      flags: number
+      hardwareVersion: number
+      keys: Array<{
+        id: string
+        keyb64: string
+        label: string
+        type: undefined
+      }>
+      label: string
+      manufacturerID: string
+      model: string
+      serialNumber: string
+      ulFreePrivateMemory: number
+      ulFreePublicMemory: number
+      ulMaxPinLen: number
+      ulMaxRwSessionCount: undefined
+      ulMaxSessionCount: undefined
+      ulMinPinLen: number
+      ulSessionCount: undefined
+      ulTotalPrivateMemory: number
+      ulTotalPublicMemory: number
+      utcTime: undefined
     }
-  }
-  stats: Array<
-    | {
-        baseStat: number
-        effort: undefined
-        stat: { name: string; url: string }
-      }
-    | { baseStat: number; effort: number; stat: { name: string; url: string } }
-  >
-  types: Array<{ slot: number; type: { name: string; url: string } }>
-  weight: number
+  }>
+  version: string
 }
