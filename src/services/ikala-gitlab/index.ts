@@ -11,6 +11,9 @@ import type { Branch, MergeRequest, Milestone } from './type'
 
 export * from './type'
 
+/**
+ * @deprecated
+ */
 export class CreateIkalaGitlabAPI {
   private _projectId: number
   private _instance: AxiosInstance
