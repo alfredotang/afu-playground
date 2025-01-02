@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync } from 'node:fs'
 import path from 'node:path'
 
-const creteSafeDir = (root: string, value: string) => {
+const createSafeDir = (root: string, value: string) => {
   const dirs = value.split('/').filter(Boolean)
   let currentPath = path.join(root)
   for (const dir of dirs) {
@@ -14,4 +14,4 @@ const creteSafeDir = (root: string, value: string) => {
   return currentPath
 }
 
-export default creteSafeDir
+export default createSafeDir
