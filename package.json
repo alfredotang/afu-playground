@@ -12,7 +12,6 @@
     "setup:log": "tsx scripts/setup-log-playground.ts",
     "build": "tsx scripts/write-cmd-into-package-script.ts",
     "log": "tsx scripts/watch-file.ts",
-    "runner": "tsx .log/main.ts",
     "format": "eslint --fix ./src"
   },
   "keywords": [],
