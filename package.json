@@ -12,6 +12,7 @@
     "setup:log": "tsx scripts/setup-log-playground.ts",
     "build": "tsx scripts/write-cmd-into-package-script.ts",
     "log": "tsx scripts/watch-file.ts",
+    "runner": "tsx .log/main.ts",
     "format": "eslint --fix ./src"
   },
   "keywords": [],
@@ -30,6 +31,7 @@
     "date-fns": "^3.6.0",
     "dayjs": "^1.11.11",
     "glob": "^10.3.10",
+    "googleapis": "^144.0.0",
     "graphql-tag": "^2.12.6",
     "hono": "^3.12.6",
     "lodash": "^4.17.21",
@@ -47,14 +49,7 @@
     "@types/lodash": "^4.14.194",
     "@types/node": "^18.15.11",
     "@types/uuid": "^9.0.8",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-simple-import-sort": "^12.0.0",
     "prettier": "^3.2.5",
     "typescript": "^5.2.2"
   }
