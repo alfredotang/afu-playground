@@ -11,7 +11,7 @@ const ID_CONFIG = {
 }
 
 const main = async () => {
-  const type = await prompt(' ', {
+  const type = await prompt('choose type', {
     type: 'select',
     options: ['nanoid', 'uuid'],
   })
