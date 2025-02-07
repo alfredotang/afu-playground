@@ -1,13 +1,8 @@
-import { nanoid } from 'nanoid'
+import { customAlphabet } from 'nanoid'
 
-// Function to generate a standard UUID
-function generateUUID() {
-  const template = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
-  return template.replace(/[xy]/g, char => {
-    const random = parseInt(nanoid(1), 36) % 16 // Get a random number between 0 and 15
-    const value = char === 'x' ? random : (random & 0x3) | 0x8 // Ensure `y` char matches UUID spec
-    return value.toString(16)
-  })
-}
+const alphanumericalId = customAlphabet('1234567890abcdef', 8)
 
-export default generateUUID
+const uuid = () =>
+  `${alphanumericalId(8)}-${alphanumericalId(4)}-${alphanumericalId(4)}-${alphanumericalId(4)}-${alphanumericalId(12)}`
+
+export default uuid
