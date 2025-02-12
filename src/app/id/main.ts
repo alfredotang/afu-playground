@@ -21,7 +21,9 @@ const main = async () => {
   const [, , _frag] = process.argv
   const frag = _frag.replace('--', '').toLowerCase()
 
-  if (Object.keys(ID_CONFIG).includes(frag)) {
+  const idConfigList = Object.keys(ID_CONFIG).map(item => item.toLowerCase())
+
+  if (idConfigList.includes(frag)) {
     generateIdAndCopy(frag as keyof typeof ID_CONFIG)
     return
   }
