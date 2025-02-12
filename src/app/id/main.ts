@@ -8,17 +8,29 @@ import uuid from '@/src/utils/uuid'
 const ID_CONFIG = {
   nanoid,
   uuid,
-}
+} as const
 
-const main = async () => {
-  const type = await prompt('choose type', {
-    type: 'select',
-    options: ['nanoid', 'uuid'],
-  })
+const generateIdAndCopy = async (type: keyof typeof ID_CONFIG) => {
   const result = ID_CONFIG[type as keyof typeof ID_CONFIG]()
   logger.info(result)
   await copyToClipboard(result)
   logger.info('copy!')
+}
+
+const main = async () => {
+  const [, , _frag] = process.argv
+  const frag = _frag.replace('--', '').toLowerCase()
+
+  if (Object.keys(ID_CONFIG).includes(frag)) {
+    generateIdAndCopy(frag as keyof typeof ID_CONFIG)
+    return
+  }
+
+  const type = await prompt('choose type', {
+    type: 'select',
+    options: ['nanoid', 'uuid'],
+  })
+  generateIdAndCopy(type as keyof typeof ID_CONFIG)
 }
 
 main()
