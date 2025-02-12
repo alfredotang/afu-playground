@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #e4eaf6;
+      font-family: Arial, sans-serif;
+      color: #333333;
+    "
+  >
+    <table
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style="padding: 40px"
+    >
+      <tr>
+        <td align="center">
+          <!-- Container -->
+          <table
+            width="600"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="
+              background-color: #ffffff;
+              border-radius: 16px;
+              overflow: hidden;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              padding: 40px;
+            "
+          >
+            <tr>
+              <td>
+                <!-- Logo -->
+                <p>
+                  <img
+                    src="https://storage.googleapis.com/public-assets-readonly/email/logo.png"
+                    alt="logo"
+                    width="117"
+                    height="32"
+                  />
+                </p>
+                <!-- Organization name content -->
+                <p
+                  style="
+                    color: #1e293b;
+                    font-size: 16px;
+                    line-height: 24px;
+                    margin-bottom: 24px;
+                  "
+                >
+                  We’re thrilled to invite you to join {{.OrgName}}!
+                  <br />As a member, you’ll get all the tools and resources you
+                  need to contribute and make a difference.
+                </p>
+
+                <!-- invitation link -->
+                <div
+                  style="
+                    color: #1e293b;
+                    font-size: 16px;
+                    line-height: 24px;
+                    margin-bottom: 24px;
+                  "
+                >
+                  <p>Here is the invitation link. :</p>
+                  <a
+                    href="{{.InvitationRedirectURL}}"
+                    target="_blank"
+                    style="
+                      background-color: #007bff;
+                      color: #ffffff;
+                      padding: 10px 20px;
+                      text-decoration: none;
+                      border-radius: 5px;
+                      display: inline-block;
+                      font-size: 16px;
+                    "
+                  >
+                    Join the Organization
+                  </a>
+                </div>
+                <div
+                  style="
+                    color: #1e293b;
+                    font-size: 16px;
+                    line-height: 24px;
+                    margin-bottom: 24px;
+                  "
+                >
+                  <p>
+                    Log in to your account or create a new one if you don’t
+                    already have one. Start collaborating with the organization!
+                  </p>
+                  <p>
+                    If you have any questions or need assistance, feel free to
+                    reach out to us at
+                    <a href="mailto:support@gmicloud.ai" style="color: #007bff"
+                      >support@gmicloud.ai</a
+                    >.
+                  </p>
+                  <p>We look forward to welcoming you to the team!</p>
+                </div>
+
+                <!-- Footer -->
+                <p
+                  style="
+                    color: #64748b;
+                    font-size: 18px;
+                    line-height: 28px;
+                    font-weight: 600;
+                  "
+                >
+                  Thanks,<br />The GMI Cloud Team
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

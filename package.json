@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cmd": "tsx src/app/cmd/main.ts",
+    "cmd:email": "tsx src/app/email/main.ts",
     "cmd:generate-ts-type": "tsx src/app/generate-ts-type/main.ts",
     "cmd:id": "tsx src/app/id/main.ts",
     "cmd:init": "tsx src/app/init/main.ts",
@@ -12,12 +13,15 @@
     "setup:log": "tsx scripts/setup-log-playground.ts",
     "build": "tsx scripts/write-cmd-into-package-script.ts",
     "log": "tsx scripts/watch-file.ts",
-    "format": "eslint --fix ./src"
+    "format": "eslint --fix ./src",
+    "dev:server": "tsx watch server/main.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@casl/ability": "^6.7.3",
+    "@hono/node-server": "^1.13.7",
     "@soie/data-manager": "^2.2.0",
     "@soie/fetcher": "^0.5.3",
     "axios": "^1.6.7",
@@ -37,6 +41,7 @@
     "lru-cache": "^11.0.2",
     "msw": "^2.2.1",
     "nanoid": "^4.0.2",
+    "nodemailer": "^6.9.16",
     "query-string": "^8.1.0",
     "quick-lru": "^7.0.0",
     "snakecase-keys": "^5.4.5",
@@ -47,7 +52,9 @@
   "devDependencies": {
     "@types/lodash": "^4.14.194",
     "@types/node": "^22.10.3",
+    "@types/nodemailer": "^6.4.17",
     "eslint-plugin-prettier": "^5.1.3",
+    "lightningcss": "^1.28.2",
     "prettier": "^3.2.5",
     "typescript": "^5.7.2"
   }

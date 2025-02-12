@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Afu playground</title>
+    <style>
+      /* barlow-latin-100-normal */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 100;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-100-normal.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-100-normal.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-200-normal */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 200;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-200-normal.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-200-normal.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-300-normal */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 300;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-300-normal.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-300-normal.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-400-normal */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-400-normal.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-400-normal.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-500-normal */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 500;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-500-normal.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-500-normal.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-600-normal */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 600;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-600-normal.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-600-normal.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-700-normal */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 700;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-700-normal.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-700-normal.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-800-normal */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 800;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-800-normal.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-800-normal.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-900-normal */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 900;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-900-normal.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-900-normal.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* barlow-latin-100-italic */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: italic;
+        font-display: swap;
+        font-weight: 100;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-100-italic.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-100-italic.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-200-italic */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: italic;
+        font-display: swap;
+        font-weight: 200;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-200-italic.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-200-italic.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-300-italic */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: italic;
+        font-display: swap;
+        font-weight: 300;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-300-italic.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-300-italic.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-400-italic */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: italic;
+        font-display: swap;
+        font-weight: 400;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-400-italic.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-400-italic.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-500-italic */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: italic;
+        font-display: swap;
+        font-weight: 500;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-500-italic.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-500-italic.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-600-italic */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: italic;
+        font-display: swap;
+        font-weight: 600;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-600-italic.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-600-italic.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-700-italic */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: italic;
+        font-display: swap;
+        font-weight: 700;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-700-italic.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-700-italic.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-800-italic */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: italic;
+        font-display: swap;
+        font-weight: 800;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-800-italic.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-800-italic.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* barlow-latin-900-italic */
+      @font-face {
+        font-family: 'Barlow';
+        font-style: italic;
+        font-display: swap;
+        font-weight: 900;
+        src:
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-900-italic.woff2)
+            format('woff2'),
+          url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-900-italic.woff)
+            format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+    </style>
+    <style>
+      html,
+      body {
+        font-family: 'Barlow', sans-serif;
+      }
+    </style>
+  </head>
+  <script type="module">
+    import {
+      createApp,
+      ref,
+      useTemplateRef,
+    } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+    const link =
+      'https://storage.googleapis.com/gmi-artifact-build-files/testing/241e2af8-50b1-4075-a54d-e77285af1745/build_files_20250103064532.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=artifact-service%40devv-404803.iam.gserviceaccount.com%2F20250103%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250103T064532Z&X-Goog-Expires=899&X-Goog-Signature=d0ebdd4dad31b30f2d3440e29b1612e4e14e334828fe90038a55bc802f4a37a04ad50cf8e13d3832f632dae0fd8054fba3b9574e1232c23af67d4d9a9793d793bd87feec065558cf533316d5af0fb232e1590bd77b039614aa1e3acd529b7c279fb6571c42e7b2113a8aca5134c784c91887a423d24533e4daad81469dfd813beae12cf77f223310404a8a907afb610726b99234344166a7fa9ab70b026f3a605834b89b7c09128e5877db4b917c44a632ed44751c0c9175bc70ff74457b56db452ef0404ac838bfdf486204095ac4649fd8d3a1683770e776ca22599f86603cc456455aa7f314603cf9cda34fbba4e9cfe782d3d942c83842878b1c526a34b9&X-Goog-SignedHeaders=content-type%3Bhost'
+
+    createApp({
+      setup() {
+        const message = ref('Hello Vue!')
+        const uploadProgress = ref(0)
+        const form = useTemplateRef('form')
+        const onChange = e => {
+          const file = e.target.value
+          console.log(file)
+          return
+          axios.put(link, files, {
+            headers: {
+              'Content-Type': file.type,
+            },
+            onUploadProgress: progressEvent => {
+              if (progressEvent.lengthComputable) {
+                uploadProgress.value = Math.round(
+                  (progressEvent.loaded / fileSize) * 100
+                )
+              }
+            },
+          })
+        }
+
+        return {
+          message,
+          onChange,
+        }
+      },
+    }).mount('#app')
+  </script>
+  <body>
+    <div id="app">
+      <header class="flex item-center justify-center w-full p-4">
+        <div class="text-2xl">Afu playground</div>
+      </header>
+      <div class="max-w-sm mx-auto p-4">
+        uploadProgress: {{ uploadProgress }}
+        <input
+          name="files"
+          type="file"
+          class="w-full"
+          multiple
+          @change="onChange"
+        />
+      </div>
+    </div>
+  </body>
+</html>
