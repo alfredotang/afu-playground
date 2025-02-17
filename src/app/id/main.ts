@@ -19,7 +19,7 @@ const generateIdAndCopy = async (type: keyof typeof ID_CONFIG) => {
 
 const main = async () => {
   const [, , _frag] = process.argv
-  const frag = _frag.replace('--', '').toLowerCase()
+  const frag = _frag?.replace('--', '')?.toLowerCase()
 
   const idConfigList = Object.keys(ID_CONFIG).map(item => item.toLowerCase())
 
