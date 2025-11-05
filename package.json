@@ -6,6 +6,7 @@
   "scripts": {
     "cmd": "tsx src/app/cmd/main.ts",
     "cmd:email": "tsx src/app/email/main.ts",
+    "cmd:gc": "tsx src/app/gc/main.ts",
     "cmd:generate-ts-type": "tsx src/app/generate-ts-type/main.ts",
     "cmd:id": "tsx src/app/id/main.ts",
     "cmd:init": "tsx src/app/init/main.ts",
