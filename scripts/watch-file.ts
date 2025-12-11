@@ -7,4 +7,4 @@ file = file.endsWith('.ts') ? file : `${file}/index.ts`
 
 logger.info(`Watching ${file}`)
 
-execSync(`tsx --watch ${file}`, { stdio: 'inherit' })
+execSync(`bun --watch ${file}`, { stdio: 'inherit' })

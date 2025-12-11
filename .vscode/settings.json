@@ -1,17 +1,3 @@
 {
-  "cSpell.words": [
-    "casl",
-    "codemod",
-    "consola",
-    "IKALA",
-    "lightningcss",
-    "nums",
-    "outdir",
-    "papaparse",
-    "shadcn",
-    "soie",
-    "Stringifiable",
-    "strs"
-  ],
   "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

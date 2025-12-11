@@ -4,18 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cmd": "tsx src/app/cmd/main.ts",
-    "cmd:email": "tsx src/app/email/main.ts",
-    "cmd:gc": "tsx src/app/gc/main.ts",
-    "cmd:generate-ts-type": "tsx src/app/generate-ts-type/main.ts",
-    "cmd:id": "tsx src/app/id/main.ts",
-    "cmd:init": "tsx src/app/init/main.ts",
-    "cmd:transform-shadcn-color": "tsx src/app/transform-shadcn-color/main.ts",
-    "setup:log": "tsx scripts/setup-log-playground.ts",
-    "build": "tsx scripts/write-cmd-into-package-script.ts",
-    "log": "tsx scripts/watch-file.ts",
+    "cmd": "bun src/app/cmd/main.ts",
+    "cmd:email": "bun src/app/email/main.ts",
+    "cmd:gc": "bun src/app/gc/main.ts",
+    "cmd:generate-ts-type": "bun src/app/generate-ts-type/main.ts",
+    "cmd:id": "bun src/app/id/main.ts",
+    "cmd:init": "bun src/app/init/main.ts",
+    "cmd:transform-shadcn-color": "bun src/app/transform-shadcn-color/main.ts",
+    "setup:log": "bun scripts/setup-log-playground.ts",
+    "build": "bun scripts/write-cmd-into-package-script.ts",
+    "log": "bun scripts/watch-file.ts",
     "format": "eslint --fix ./src",
-    "dev:server": "tsx watch server/main.ts"
+    "dev:server": "bun --watch server/main.ts",
+    "log:new": "bun .log/main.ts"
   },
   "keywords": [],
   "author": "",
@@ -46,7 +47,6 @@
     "query-string": "^8.1.0",
     "quick-lru": "^7.0.0",
     "snakecase-keys": "^5.4.5",
-    "tsx": "^4.16.4",
     "yup": "^1.2.0",
     "zod": "^3.24.1"
   },
@@ -57,6 +57,9 @@
     "eslint-plugin-prettier": "^5.1.3",
     "lightningcss": "^1.28.2",
     "prettier": "^3.2.5",
-    "typescript": "^5.7.2"
-  }
+    "typescript": "^5.7.2",
+    "@types/bun": "latest"
+  },
+  "private": true,
+  "packageManager": "pnpm@10.12.3+sha512.467df2c586056165580ad6dfb54ceaad94c5a30f80893ebdec5a44c5aa73c205ae4a5bb9d5ed6bb84ea7c249ece786642bbb49d06a307df218d03da41c317417"
 }
