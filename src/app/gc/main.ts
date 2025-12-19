@@ -63,7 +63,7 @@ async function main() {
       commits: Number(commitCount),
       added,
       deleted,
-      net: added - deleted,
+      net: added + deleted,
     })
   })
 
