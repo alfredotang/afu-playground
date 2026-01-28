@@ -11,9 +11,10 @@
     "outdir",
     "papaparse",
     "shadcn",
+    "snakecase",
     "soie",
     "Stringifiable",
     "strs",
-    "snakecase"
+    "yorozuya"
   ]
 }
