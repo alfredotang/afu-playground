@@ -25,7 +25,7 @@ const cmdScripts = entryPoints.reduce<Record<string, string>>(
       entryPoint === 'cmd'
         ? entryPoint
         : `cmd:${entryPoint.split('/').filter(Boolean).join(':')}`
-    collation[scriptKey] = `tsx src/app/${entryPoint}/main.ts`
+    collation[scriptKey] = `bun --bun src/app/${entryPoint}/main.ts`
     return collation
   },
   {}
